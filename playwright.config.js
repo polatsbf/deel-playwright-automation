@@ -31,6 +31,8 @@ export default defineConfig({
 
     /* Headed locally, headless in CI */
     headless: isCI,
+
+    screenshot: "only-on-failure",
   },
 
   /* Configure projects for major browsers */
