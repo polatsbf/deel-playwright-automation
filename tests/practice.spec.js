@@ -2,10 +2,8 @@
 import { BasePage } from "../pages/BasePage.js";
 import { test, expect } from "../test-fixtures.js";
 
-test("add element", async ({ practicePage }) => {
-  await practicePage.login();
-  await practicePage.navigateToPage("Add/Remove Elements");
-  await practicePage.clickAddElement(3);
+test("has title", async ({ practicePage }) => {
+  await practicePage.page.goto("https://playwright.dev/");
 
-  await expect(practicePage.deleteButtons).toHaveCount(2);
+  await expect(practicePage.page).toHaveTitle(/Playwright/);
 });

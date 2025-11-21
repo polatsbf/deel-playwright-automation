@@ -14,14 +14,8 @@ export class BasePage {
     await this.page.waitForLoadState("networkidle");
   }
 
-  async navigateToPage(pageName){
+  async navigateToPage(pageName) {
     await this.page.getByRole("link", { name: pageName }).click();
   }
-  
-  async waitForApi(endpoint) {
-    await this.page.waitForResponse(
-      (res) => res.url().includes(endpoint) && res.status() === 200
-    );
-  }
-  
+
 }

@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
-dotenv.config(); 
+dotenv.config();
 
 const isCI = !!process.env.CI; // Detect if running in CI
 
@@ -14,7 +14,7 @@ export default defineConfig({
   fullyParallel: isCI ? true : false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: isCI,
-  /* Retry on CI only */
+  /* Retry on CI only to avoid flaky test*/
   retries: isCI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: isCI ? 3 : 1,

@@ -5,7 +5,12 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "test:headed": "npx playwright test --headed"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
